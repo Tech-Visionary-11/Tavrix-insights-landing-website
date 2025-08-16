@@ -3,7 +3,6 @@ import { ReactNode } from 'react';
 import './globals.css';
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  // Hardcode nav, no hook, all SEO-friendly
   return (
     <html lang="en">
       <body>
@@ -13,20 +12,15 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               Agent Watch
             </Link>
             <div className="space-x-2">
-              {/* Home */}
               <Link href="/" className="px-2 py-1 rounded text-gray-700 hover:text-blue-700">
                 Home
               </Link>
-              {/* Help Docs (external, new tab) */}
-              <a
-                href="/help"
+              <Link
+                href="/help-docs"
                 className="px-2 py-1 rounded text-gray-700 hover:text-blue-700"
-                target="_blank"
-                rel="noopener"
               >
                 Help Docs
-              </a>
-              {/* Hiring */}
+              </Link>
               <Link href="/hiring" className="px-2 py-1 rounded text-gray-700 hover:text-blue-700">
                 Hiring
               </Link>

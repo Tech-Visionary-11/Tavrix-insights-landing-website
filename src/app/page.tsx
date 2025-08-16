@@ -97,17 +97,18 @@ export default function Home() {
       </section>
 
       <section className="bg-white py-16 px-4" id="get-started">
-        <div className="max-w-2xl mx-auto text-center">
-          <h2 className="text-blue-700 text-2xl font-bold mb-2">Get Started</h2>
-          <p className="mb-6 text-gray-700">Ready to take control of your AI agent analytics?</p>
-          <a
-            href="mailto:hello@agentwatch.app"
-            className="inline-block px-7 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow transition"
-          >
-            Request Early Access
-          </a>
-        </div>
-      </section>
+  <div className="max-w-2xl mx-auto text-center">
+    <h2 className="text-blue-700 text-2xl font-bold mb-2">Get Started</h2>
+    <p className="mb-6 text-gray-700">Explore our docs and start integrating your AI agents today.</p>
+    <a
+      href="/docs"
+      className="inline-block px-7 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow transition"
+    >
+      View Documentation
+    </a>
+  </div>
+</section>
+
 
       <footer className="text-center text-gray-500 text-sm py-8">
         &copy; 2025 Agent Watch. All rights reserved.
