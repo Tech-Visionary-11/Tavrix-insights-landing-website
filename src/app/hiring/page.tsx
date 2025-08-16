@@ -8,7 +8,7 @@ export default function HiringPage() {
   return (
     <main className="max-w-2xl mx-auto py-12 px-4">
       <h1 className="text-3xl font-extrabold text-blue-700 mb-4">
-        We're Hiring!
+        We&apos;re Hiring!
       </h1>
       <p className="mb-7 text-lg text-gray-700">
         Join Agent Watch and help us build the future of AI agent analytics. If
@@ -70,7 +70,7 @@ export default function HiringPage() {
           .
         </p>
         <p>
-          Don't see your exact role? If you love what we're building, pitch us
+          Don&apos;t see your exact role? If you love what we&apos;re building, pitch us
           anyway!
         </p>
       </div>

@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Agent Watch | Analytics for AI Agents & Workflows",
     description: "Powerful analytics, monitoring, and insights for your AI agents, workflow bots, and automations.",
-    url: "https://www.agentwatch.app",
+    url: process.env.NEXT_AGENT_WATCH_SITE_URL || "https://agent-watch-fe.onrender.com",
     type: "website",
     locale: "en_US",
     images: [
