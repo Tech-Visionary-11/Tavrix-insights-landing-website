@@ -10,7 +10,7 @@ const APIReferenceSection: React.FC<Props> = ({
   agentId = "your-agent-id-here",
   sessionId = "<SESSION_ID>",
 }) => {
-  const baseUrl = process.env.NEXT_WEBAPP_BE_URL 
+  const baseUrl = process.env.NEXT_PUBLIC_WEBAPP_BE_URL 
 
   return (
     <section className="api-reference-section bg-white rounded-md shadow p-6 mt-8">
