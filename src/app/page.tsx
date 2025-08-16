@@ -165,7 +165,7 @@ export default function Home() {
             Explore our docs and start integrating your AI agents today.
           </p>
           <a
-            href="/docs"
+            href="/help-docs"
             className="inline-block px-7 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow transition"
           >
             View Documentation
