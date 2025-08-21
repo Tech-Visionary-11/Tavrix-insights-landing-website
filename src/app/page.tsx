@@ -1,15 +1,67 @@
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 
 export function generateMetadata(): Metadata {
   return {
-    title: "Agent Watch | Analytics for AI Agents & Workflows",
+    title: "Tavrix Insights | Analytics for AI Agents & Workflows",
     description:
-      "Real-time analytics, monitoring, and cost insights for your AI agents, LLM workflows, and automations.",
-    openGraph: {
-      title: "Agent Watch | Analytics for AI Agents & Workflows",
+      "Tavrix Insights is Real-time analytics, monitoring, and cost insights for your AI agents, LLM workflows, and automations.",
+    keywords: [
+      "AI agents",
+      "LLM workflows",  
+      "analytics",
+      "monitoring",
+      "cost insights",
+      "automation",
+      "agent performance",
+      "real-time analytics",
+      "AI monitoring",
+      "workflow analytics",
+      "agent insights",
+      "AI performance",
+      "agent monitoring",
+      "LLM monitoring",
+      "AI automation",
+      "agent cost tracking",
+      "AI agent analytics",
+      "workflow monitoring",    
+      "agent performance metrics",
+      "AI workflow insights",
+      "agent error tracking",
+      "AI agent performance",
+      "LLM agent monitoring",
+      "AI agent cost monitoring",
+      "AI agent workflow",
+      "AI agent performance tracking",
+      "AI agent error monitoring",
+      "AI agent workflow analytics",
+      "AI agent performance insights",
+      "AI agent workflow monitoring",
+      "AI agent performance metrics",
+      "AI agent workflow performance",
+      "AI agent workflow insights",
+      "AI agent workflow monitoring",
+      "AI agent workflow analytics",
+      "AI agent workflow performance tracking",
+      "AI agent workflow error tracking",
+      "AI agent workflow cost monitoring",  
+      "Tavrix Insights",
+      "Tavrix",
+      "Tavrix Insights Analytics",
+      "Tavrix Insights Monitoring",
+      "Tavrix Insights Cost Insights",
+      "Tavrix Insights AI Agents",
+      "Tavrix Insights LLM Workflows",
+      "Tavrix Insights Automation",
+      "Tavrix Insights Agent Performance",
+      "agent watch",
+      "agent watch analytics",
+    ],
+      openGraph: {
+      title: "Tavrix Insights | Analytics for AI Agents & Workflows",
       description:
-        "Powerful analytics, monitoring, and insights for your AI agents, workflow bots, and automations.",
+        "Tavrix Insights, agent watch,Powerful analytics, monitoring, and insights for your AI agents, workflow bots, and automations.",
       url: process.env.NEXT_PUBLIC_AGENT_WATCH_SITE_URL,
       type: "website",
       locale: "en_US",
@@ -18,7 +70,7 @@ export function generateMetadata(): Metadata {
           url: "/agent-connection-flow.png",
           width: 1200,
           height: 630,
-          alt: "Agent Watch Flowchart",
+          alt: "Tavrix Insights Flowchart",
         },
       ],
     },
@@ -39,7 +91,7 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Image
             src="/logo.png"
-            alt="Agent Watch"
+            alt="Tavrix Insights Logo"
             width={64}
             height={64}
             className="w-16 mb-4"
@@ -47,7 +99,7 @@ export default function Home() {
           />
 
           <h1 className="text-3xl sm:text-4xl font-extrabold mb-3">
-            Agent Watch
+            Tavrix Insights
           </h1>
           <p className="max-w-xl text-lg text-gray-600 mb-6">
             Real-time analytics and insights for your AI Agents, LLM workflows,
@@ -66,7 +118,7 @@ export default function Home() {
 
       <section className="max-w-3xl mx-auto py-12 px-4">
         <h2 className="text-blue-700 text-2xl font-bold mb-4">
-          Why Agent Watch?
+          Why Tavrix Insights?
         </h2>
         <ul className="space-y-3 text-base leading-7">
           <li>
@@ -140,7 +192,7 @@ export default function Home() {
         <h2 className="text-blue-700 text-2xl font-bold mb-4">How It Works</h2>
         <ol className="list-decimal list-inside space-y-2 mb-4 text-base">
           <li>
-            <span className="font-semibold">Integrate</span> Agent Watch SDK or
+            <span className="font-semibold">Integrate</span>Tavrix Insights SDK or
             connect your platform via API.
           </li>
           <li>
@@ -163,18 +215,18 @@ export default function Home() {
           <h2 className="text-blue-700 text-2xl font-bold mb-2">Get Started</h2>
           <p className="mb-6 text-gray-700">
             Explore our docs and start integrating your AI agents today.
-          </p>
-          <a
+          <Link
             href="/help-docs"
             className="inline-block px-7 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow transition"
           >
             View Documentation
-          </a>
+          </Link>
+          </p>
         </div>
       </section>
 
       <footer className="text-center text-gray-500 text-sm py-8">
-        &copy; 2025 Agent Watch. All rights reserved.
+        &copy; 2025 Tavrix Insights. All rights reserved.
       </footer>
     </main>
   );

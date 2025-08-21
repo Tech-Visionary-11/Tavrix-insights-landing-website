@@ -15,7 +15,7 @@ const APIReferenceSection: React.FC<Props> = ({
   return (
     <section className="api-reference-section bg-white rounded-md shadow p-6 mt-8">
       <h2 className="text-2xl font-semibold mb-4">
-        How to Connect Your Agent to Agent Watch
+        How to Connect Your Agent to Tavrix Insights
       </h2>
 
       {/* Create Session */}

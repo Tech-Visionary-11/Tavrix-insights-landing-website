@@ -18,10 +18,10 @@ const FAQSection: React.FC = () => {
           errors.
         </AccordionItem>
 
-        <AccordionItem title="Does Agent Watch work with low-code drag-and-drop workflow tools (e.g., n8n)?">
-          Yes, Agent Watch integrates smoothly with low-code platforms like{" "}
+        <AccordionItem title="Does Tavrix Insights work with low-code drag-and-drop workflow tools (e.g., n8n)?">
+          Yes, Tavrix Insights integrates smoothly with low-code platforms like{" "}
           <strong>n8n</strong> by using its API endpoints. In your n8n workflows, you can
-          configure HTTP request nodes to call Agent Watch’s REST API to create sessions,
+          configure HTTP request nodes to call Tavrix Insights REST API to create sessions,
           send logs, and close sessions. This allows you to track and analyze automation
           runs without writing code—just provide your API token and follow the documented
           endpoints.

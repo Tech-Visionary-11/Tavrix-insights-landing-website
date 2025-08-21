@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Careers | Join Agent Watch",
+  title: "Careers | Join Tavrix Insights",
   description:
-    "We're hiring talented engineers, BDE, and creators to help us build the future of AI agent analytics.",
+    "Tavrix Insights We're hiring talented engineers, BDE, and creators to help us build the future of AI agent analytics.",
 };
 
 export default function HiringPage() {
@@ -11,7 +11,7 @@ export default function HiringPage() {
         We&apos;re Hiring!
       </h1>
       <p className="mb-7 text-lg text-gray-700">
-        Join Agent Watch and help us build the future of AI agent analytics. If
+        Join Tavrix Insights and help us build the future of AI agent analytics. If
         you are passionate about technology and want to work in a fast-growing
         SaaS startup, we want to hear from you!
       </p>
@@ -75,7 +75,7 @@ export default function HiringPage() {
         </p>
       </div>
       <div className="text-gray-400 text-sm pt-6 border-t">
-        &copy; 2025 Agent Watch. All rights reserved.
+        &copy; 2025 Tavrix Insights. All rights reserved.
       </div>
     </main>
   );
