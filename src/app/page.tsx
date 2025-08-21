@@ -214,14 +214,13 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-blue-700 text-2xl font-bold mb-2">Get Started</h2>
           <p className="mb-6 text-gray-700">
-            Explore our docs and start integrating your AI agents today.
+            Explore our docs and start integrating your AI agents today.</p>
           <Link
             href="/help-docs"
             className="inline-block px-7 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow transition"
           >
             View Documentation
           </Link>
-          </p>
         </div>
       </section>
 
