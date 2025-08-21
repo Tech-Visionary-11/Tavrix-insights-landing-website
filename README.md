@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Tavrix Insights
+Tavrix Insights is a modern dashboard and monitoring platform designed to help you track, analyze, and optimize your AI agents and automation workflows effortlessly. Whether you're running complex language model agents, no-code automations, or multi-step workflows, Tavrix Insights provides real-time visibility into costs, errors, session logs, and performance metrics — all in an intuitive and user-friendly interface.
 
-## Getting Started
+Key Features
+Agent Monitoring: Create, manage, and monitor AI agents and automation workflows in one place.
 
-First, run the development server:
+Session Tracking: Detailed logs and session history for each agent run, enabling step-by-step debugging.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Cost Analysis: Keep control of your AI spend with real-time cost tracking and alerts.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Error & Failure Alerts: Quickly identify and diagnose failing sessions or agent steps.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+User-Friendly UI: Designed for both technical and non-technical users to gain insights at a glance.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Modern Tech Stack: Built with React for frontend and FastAPI with PostgreSQL for backend, ensuring performance and scalability.
 
-## Learn More
+Extensible & Integrations: Easily connect to popular no-code tools or custom agents through APIs.
 
-To learn more about Next.js, take a look at the following resources:
+Getting Started
+Sign up or log in to Tavrix Insights.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Add your AI agents or automation workflows.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+View live sessions, logs, and cost metrics.
 
-## Deploy on Vercel
+Set alert rules to stay informed about failures or cost spikes.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Optimize your agent flows based on actionable insights.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Why Tavrix Insights?
+In a world where AI agents and automation grow rapidly, keeping track of their health, cost, and performance is critical. Tavrix Insights empowers individuals, startups, and teams to build confidently without losing control or visibility.
