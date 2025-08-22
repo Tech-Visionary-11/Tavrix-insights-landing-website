@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ReactNode } from 'react';
 import './globals.css';
-
+import { Analytics } from "@vercel/analytics/next"
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
@@ -28,6 +28,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
           </div>
         </nav>
         {children}
+        <Analytics/>
       </body>
     </html>
   );

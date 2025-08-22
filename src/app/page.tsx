@@ -9,7 +9,7 @@ export function generateMetadata(): Metadata {
       "Tavrix Insights is Real-time analytics, monitoring, and cost insights for your AI agents, LLM workflows, and automations.",
     keywords: [
       "AI agents",
-      "LLM workflows",  
+      "LLM workflows",
       "analytics",
       "monitoring",
       "cost insights",
@@ -25,7 +25,7 @@ export function generateMetadata(): Metadata {
       "AI automation",
       "agent cost tracking",
       "AI agent analytics",
-      "workflow monitoring",    
+      "workflow monitoring",
       "agent performance metrics",
       "AI workflow insights",
       "agent error tracking",
@@ -45,7 +45,7 @@ export function generateMetadata(): Metadata {
       "AI agent workflow analytics",
       "AI agent workflow performance tracking",
       "AI agent workflow error tracking",
-      "AI agent workflow cost monitoring",  
+      "AI agent workflow cost monitoring",
       "Tavrix Insights",
       "Tavrix",
       "Tavrix Insights Analytics",
@@ -58,7 +58,7 @@ export function generateMetadata(): Metadata {
       "agent watch",
       "agent watch analytics",
     ],
-      openGraph: {
+    openGraph: {
       title: "Tavrix Insights | Analytics for AI Agents & Workflows",
       description:
         "Tavrix Insights, agent watch,Powerful analytics, monitoring, and insights for your AI agents, workflow bots, and automations.",
@@ -192,8 +192,8 @@ export default function Home() {
         <h2 className="text-blue-700 text-2xl font-bold mb-4">How It Works</h2>
         <ol className="list-decimal list-inside space-y-2 mb-4 text-base">
           <li>
-            <span className="font-semibold">Integrate</span>Tavrix Insights SDK or
-            connect your platform via API.
+            <span className="font-semibold">Integrate</span>Tavrix Insights SDK
+            or connect your platform via API.
           </li>
           <li>
             <span className="font-semibold">Deploy</span> your agents, workflows
@@ -214,7 +214,8 @@ export default function Home() {
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-blue-700 text-2xl font-bold mb-2">Get Started</h2>
           <p className="mb-6 text-gray-700">
-            Explore our docs and start integrating your AI agents today.</p>
+            Explore our docs and start integrating your AI agents today.
+          </p>
           <Link
             href="/help-docs"
             className="inline-block px-7 py-3 bg-blue-700 hover:bg-blue-800 text-white font-semibold rounded-lg shadow transition"
