@@ -1,4 +1,3 @@
-import Link from 'next/link';
 
 const OverviewSection = () => (
   <section className="overview-section bg-white rounded-md shadow p-6">
@@ -9,7 +8,7 @@ const OverviewSection = () => (
     <h2 className="text-2xl font-semibold mb-2">How to Add a New Agent</h2>
     <ol className="list-decimal list-inside text-gray-800 space-y-2 mb-4">
       <li>
-        Navigate to <strong>Agents &gt; <Link href="/agents/add" className="text-blue-600 hover:underline">Add New Agent</Link></strong> from the sidebar.
+        Navigate to <strong>Agents &gt; <a href={`${process.env.NEXT_PUBLIC_AGENT_WATCH_SITE_URL}/agents/add`} target='_blank' className="text-blue-600 hover:underline">Add New Agent</a></strong> from the sidebar.
       </li>
       <li>
         <strong>Fill Required Details:</strong> Name, Type, Model/LLM, plus optional tags, description, or avatar.
