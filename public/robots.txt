@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://tavrix-insights.vercel.app
+
+# Sitemaps
+Sitemap: https://tavrix-insights.vercel.app/sitemap.xml

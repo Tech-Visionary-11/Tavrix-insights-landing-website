@@ -17,7 +17,7 @@ interface BlogPost {
   author?: string;
 }
 
-const STRAPI_URL = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs?populate=*`;
+const STRAPI_URL = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/blogs?populate=*`;
 
 async function getPostBySlug(slug: string): Promise<BlogPost | null> {
   const url = `${STRAPI_URL}&filters[slug][$eq]=${encodeURIComponent(slug)}`;
@@ -112,9 +112,10 @@ export default async function PostPage({ params }: PostPageProps) {
         />
 
         <article
-          className="prose max-w-none text-gray-900"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-        />
+  className="prose prose-lg mx-auto max-w-none text-gray-900"
+  dangerouslySetInnerHTML={{ __html: post.content }}
+/>
+
       </main>
     </>
   );

@@ -9,6 +9,32 @@ interface BlogPost {
   coverImageUrl?: string;
 }
 
+// Define types for Strapi response
+interface StrapiImageData {
+  url: string;
+}
+
+interface StrapiBlogAttributes {
+  slug: string;
+  title: string;
+  description: string;
+  publishedAt: string;
+  coverImage?: {
+    data?: {
+      attributes: StrapiImageData;
+    };
+  };
+}
+
+interface StrapiBlog {
+  id: number;
+  attributes: StrapiBlogAttributes;
+}
+
+interface StrapiResponse {
+  data: StrapiBlog[];
+}
+
 export default async function BlogPage() {
   const posts = await getPosts();
   return (
@@ -59,22 +85,22 @@ export default async function BlogPage() {
   );
 }
 
-const STRAPI_URL = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/blogs?populate=coverImage`; 
+const STRAPI_URL = `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/api/blogs?populate=coverImage`;
 
 const getPosts = async (): Promise<BlogPost[]> => {
   const res = await fetch(STRAPI_URL, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to fetch blogs from Strapi");
-  const data = await res.json();
-  
-  return data.data.map((item: any) => ({
-    slug: item.slug,
-    title: item.title,
-    description: item.description,
-    date: item.publishedAt,
-    coverImageUrl: 'http://localhost:1337'+ item.coverImage.url
+
+  const data: StrapiResponse = await res.json();
+
+  return data.data.map((item) => ({
+    slug: item.attributes.slug,
+    title: item.attributes.title,
+    description: item.attributes.description,
+    date: item.attributes.publishedAt,
+    coverImageUrl: item.attributes.coverImage?.data
+      ? process.env.NEXT_PUBLIC_STRAPI_API_URL +
+        item.attributes.coverImage.data.attributes.url
+      : undefined,
   }));
-
-
 };
-
-
