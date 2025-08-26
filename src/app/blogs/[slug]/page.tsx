@@ -5,7 +5,7 @@ import { remark } from "remark";
 import html from "remark-html";
 
 interface PostPageProps {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }
 
 interface BlogPost {
@@ -65,7 +65,8 @@ function PostHeader({
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const post = await getPostBySlug(params.slug);
+  const slug=(await params).slug;
+  const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
