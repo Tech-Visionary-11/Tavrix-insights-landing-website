@@ -23,12 +23,16 @@ interface StrapiBlog {
 interface StrapiResponse<T> {
   data: T[];
 }
+type BlogPageProps = {
+  searchParams: {
+    category?: string;
+    search?: string;
+  }
+}
 
 export default async function BlogPage({
   searchParams,
-}: {
-  searchParams: { category?: string; search?: string };
-}) {
+}:BlogPageProps) {
   const category = searchParams.category ?? "";
   const search = searchParams.search ?? "";
 
