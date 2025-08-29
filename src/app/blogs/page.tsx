@@ -23,18 +23,19 @@ interface StrapiBlog {
 interface StrapiResponse<T> {
   data: T[];
 }
+
 type BlogPageProps = {
-  searchParams: {
+  searchParams: Promise<{
     category?: string;
     search?: string;
-  }
-}
+  }>;
+};
 
-export default async function BlogPage({
-  searchParams = {},  
-}: BlogPageProps) {
-  const category = searchParams.category ?? "";
-  const search = searchParams.search ?? "";
+export default async function BlogPage({ searchParams }: BlogPageProps) {
+  // Await the resolved `searchParams` promise
+  const resolvedSearchParams = await searchParams;
+  const category = resolvedSearchParams?.category ?? "";
+  const search = resolvedSearchParams?.search ?? "";
 
   const [posts, categories] = await Promise.all([
     getPosts(category, search),
@@ -47,49 +48,54 @@ export default async function BlogPage({
         Blog
       </h1>
 
-   <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-  {/* Search */}
-  <form method="GET" action="/blogs" className="w-full max-w-md flex">
-    <input
-      type="text"
-      name="search"
-      defaultValue={search}
-      placeholder="Search posts..."
- className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:ring-2 focus:ring-blue-500 text-base"    />
-    {category && <input type="hidden" name="category" value={category} />}
-    <button
-      type="submit"
-  className="px-5 py-2 bg-blue-600 text-white font-semibold rounded-r-md hover:bg-blue-700"    >
-      Search
-    </button>
-  </form>
+      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        {/* Search */}
+        <form method="GET" action="/blogs" className="w-full max-w-md flex">
+          <input
+            type="text"
+            name="search"
+            defaultValue={search}
+            placeholder="Search posts..."
+            className="flex-grow px-4 py-2 border border-gray-300 rounded-l-md focus:ring-2 focus:ring-blue-500 text-base"
+          />
+          {category && <input type="hidden" name="category" value={category} />}
+          <button
+            type="submit"
+            className="px-5 py-2 bg-blue-600 text-white font-semibold rounded-r-md hover:bg-blue-700"
+          >
+            Search
+          </button>
+        </form>
 
-  {/* Filter Tabs */}
-  <nav className="flex gap-2">
-
-    <Link
-      href={search ? `/blogs?search=${encodeURIComponent(search)}` : "/blogs"}
-      className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${
-        !category ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-      }`}
-    >
-      All
-    </Link>
-    {categories.map((cat) => (
-      <Link
-        key={cat}
-        href={`/blogs?category=${encodeURIComponent(cat)}${
-          search ? `&search=${encodeURIComponent(search)}` : ""
-        }`}
-        className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${
-          category === cat ? "bg-blue-600 text-white" : "bg-gray-100 text-gray-700 hover:bg-gray-200"
-        }`}
-      >
-        {cat}
-      </Link>
-    ))}
-  </nav>
-</div>
+        {/* Filter Tabs */}
+        <nav className="flex gap-2">
+          <Link
+            href={search ? `/blogs?search=${encodeURIComponent(search)}` : "/blogs"}
+            className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${
+              !category
+                ? "bg-blue-600 text-white"
+                : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+            }`}
+          >
+            All
+          </Link>
+          {categories.map((cat) => (
+            <Link
+              key={cat}
+              href={`/blogs?category=${encodeURIComponent(cat)}${
+                search ? `&search=${encodeURIComponent(search)}` : ""
+              }`}
+              className={`px-4 py-2 rounded-lg text-sm font-medium whitespace-nowrap transition ${
+                category === cat
+                  ? "bg-blue-600 text-white"
+                  : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+              }`}
+            >
+              {cat}
+            </Link>
+          ))}
+        </nav>
+      </div>
 
       {/* Blog Grid */}
       {posts.length === 0 ? (
@@ -153,6 +159,7 @@ export default async function BlogPage({
     </main>
   );
 }
+
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
 // ✅ Fetch posts with category + search
