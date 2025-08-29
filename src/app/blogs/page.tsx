@@ -9,26 +9,17 @@ interface BlogPost {
   coverImageUrl?: string;
 }
 
-// Define types for Strapi response
-interface StrapiImageData {
-  url: string;
-}
-
-interface StrapiBlogAttributes {
+interface StrapiBlog {
+  id: number;
   slug: string;
   title: string;
   description: string;
   publishedAt: string;
   coverImage?: {
     data?: {
-      attributes: StrapiImageData;
+      url: string;
     };
   };
-}
-
-interface StrapiBlog {
-  id: number;
-  attributes: StrapiBlogAttributes;
 }
 
 interface StrapiResponse {
@@ -94,13 +85,13 @@ const getPosts = async (): Promise<BlogPost[]> => {
   const data: StrapiResponse = await res.json();
 
   return data.data.map((item) => ({
-    slug: item.attributes.slug,
-    title: item.attributes.title,
-    description: item.attributes.description,
-    date: item.attributes.publishedAt,
-    coverImageUrl: item.attributes.coverImage?.data
+    slug: item.slug,
+    title: item.title,
+    description: item.description,
+    date: item.publishedAt,
+    coverImageUrl: item.coverImage?.data
       ? process.env.NEXT_PUBLIC_STRAPI_API_URL +
-        item.attributes.coverImage.data.attributes.url
+        item.coverImage.data.url
       : undefined,
   }));
 };

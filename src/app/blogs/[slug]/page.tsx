@@ -45,10 +45,9 @@ async function getPostBySlug(slug: string): Promise<BlogPost | null> {
 function PostHeader({
   title,
   date,
-  description,
-}: Omit<BlogPost, "slug" | "content">) {
+}: Omit<BlogPost, "slug" | "content" |"description">) {
   return (
-    <header className="mb-8 border-b pb-4">
+    <header className="mb-8  pb-4 ">
       <h1 className="text-4xl font-extrabold leading-tight mb-2">{title}</h1>
       <p className="text-sm text-gray-500 mb-4">
         <time dateTime={date}>
@@ -59,13 +58,12 @@ function PostHeader({
           })}
         </time>
       </p>
-      <p className="text-lg text-gray-700">{description}</p>
     </header>
   );
 }
 
 export default async function PostPage({ params }: PostPageProps) {
-  const slug=(await params).slug;
+  const slug = (await params).slug;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -109,14 +107,12 @@ export default async function PostPage({ params }: PostPageProps) {
         <PostHeader
           title={post.title}
           date={post.date}
-          description={post.description}
         />
 
         <article
-  className="prose prose-lg mx-auto max-w-none text-gray-900"
-  dangerouslySetInnerHTML={{ __html: post.content }}
-/>
-
+          className="prose prose-lg mx-auto max-w-none text-gray-900"
+          dangerouslySetInnerHTML={{ __html: post.content }}
+        />
       </main>
     </>
   );
