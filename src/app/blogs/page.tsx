@@ -31,8 +31,8 @@ type BlogPageProps = {
 }
 
 export default async function BlogPage({
-  searchParams,
-}:BlogPageProps) {
+  searchParams = {},  
+}: BlogPageProps) {
   const category = searchParams.category ?? "";
   const search = searchParams.search ?? "";
 
