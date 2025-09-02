@@ -1,10 +1,18 @@
-import Link from 'next/link';
-import { ReactNode } from 'react';
-import './globals.css';
-import { Analytics } from "@vercel/analytics/next"
+import Link from "next/link";
+import { ReactNode } from "react";
+import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en">
+      <head>
+        <Script
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5703165693481166`}
+          strategy="afterInteractive"
+          crossOrigin="anonymous"
+        />
+      </head>
       <body>
         <nav className="bg-white shadow mb-4">
           <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
@@ -12,7 +20,10 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               Tavrix Insights
             </Link>
             <div className="space-x-2">
-              <Link href="/" className="px-2 py-1 rounded text-gray-700 hover:text-blue-700">
+              <Link
+                href="/"
+                className="px-2 py-1 rounded text-gray-700 hover:text-blue-700"
+              >
                 Home
               </Link>
               <Link
@@ -21,17 +32,23 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               >
                 Help Docs
               </Link>
-              <Link href="/hiring" className="px-2 py-1 rounded text-gray-700 hover:text-blue-700">
+              <Link
+                href="/hiring"
+                className="px-2 py-1 rounded text-gray-700 hover:text-blue-700"
+              >
                 Hiring
               </Link>
-              <Link href="/blogs" className="px-2 py-1 rounded text-gray-700 hover:text-blue-700">
+              <Link
+                href="/blogs"
+                className="px-2 py-1 rounded text-gray-700 hover:text-blue-700"
+              >
                 Blog
               </Link>
             </div>
           </div>
         </nav>
         {children}
-        <Analytics/>
+        <Analytics />
       </body>
     </html>
   );

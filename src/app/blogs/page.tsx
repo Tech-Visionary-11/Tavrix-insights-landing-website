@@ -30,6 +30,27 @@ type BlogPageProps = {
     search?: string;
   }>;
 };
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Blog | Tavrix Insights',
+  description: 'Read expert articles on AI monitoring, web dev, FastAPI, Strapi, and modern SaaS from the Tavrix Insights team.',
+  openGraph: {
+    title: 'Blog | Tavrix Insights',
+    description: 'Expert tech articles on AI monitoring, modern web development, FastAPI, SEO, and more.',
+    url:  `${process.env.NEXT_PUBLIC_AGENT_WATCH_SITE_URL}/blogs`,
+    siteName: 'Tavrix Insights',
+    type: 'website',
+    images: [
+ {
+          url: "/agent-connection-flow.png",
+          width: 1200,
+          height: 630,
+          alt: "Tavrix Insights Flowchart",
+        },
+    ],
+  },
+};
 
 export default async function BlogPage({ searchParams }: BlogPageProps) {
   // Await the resolved `searchParams` promise
@@ -162,7 +183,6 @@ export default async function BlogPage({ searchParams }: BlogPageProps) {
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_API_URL;
 
-// ✅ Fetch posts with category + search
 const getPosts = async (category?: string, search?: string): Promise<BlogPost[]> => {
   let url = `${STRAPI_URL}/api/blogs?populate=*`;
 
