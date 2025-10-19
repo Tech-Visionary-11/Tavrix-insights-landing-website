@@ -106,7 +106,7 @@ export default function Home() {
             and automation teams.
           </p>
           <a
-            href={process.env.NEXT_PUBLIC_AGENT_WATCH_SITE_URL}
+            href={process.env.NEXT_PUBLIC_WEBAPP_BE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block cursor-pointer px-7 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold shadow transition mb-2"
