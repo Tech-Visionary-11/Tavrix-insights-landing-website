@@ -38,12 +38,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               >
                 Hiring
               </Link>
-              <Link
-                href="/blogs"
-                className="px-2 py-1 rounded text-gray-700 hover:text-blue-700"
-              >
-                Blog
-              </Link>
             </div>
           </div>
         </nav>
