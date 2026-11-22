@@ -84,6 +84,9 @@ export function generateMetadata(): Metadata {
   };
 }
 
+// Public URL of the Tavrix Insights web app (agent-watch-fe), without a trailing slash.
+const webappFeUrl = process.env.NEXT_PUBLIC_WEBAPP_FE_URL?.replace(/\/+$/, "");
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900">
@@ -106,9 +109,9 @@ export default function Home() {
             and automation teams.
           </p>
           <a
-            href={process.env.NEXT_PUBLIC_WEBAPP_BE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={webappFeUrl ? `${webappFeUrl}/dashboard` : "/help-docs"}
+            target={webappFeUrl ? "_blank" : undefined}
+            rel={webappFeUrl ? "noopener noreferrer" : undefined}
             className="inline-block cursor-pointer px-7 py-3 rounded-lg bg-blue-700 hover:bg-blue-800 text-white font-semibold shadow transition mb-2"
           >
             Start Monitoring My Agents

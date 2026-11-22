@@ -1,3 +1,5 @@
+// Public URL of the Tavrix Insights web app (agent-watch-fe), without a trailing slash.
+const webappFeUrl = process.env.NEXT_PUBLIC_WEBAPP_FE_URL?.replace(/\/+$/, "");
 
 const OverviewSection = () => (
   <section className="overview-section bg-white rounded-md shadow p-6">
@@ -8,7 +10,7 @@ const OverviewSection = () => (
     <h2 className="text-2xl font-semibold mb-2">How to Add a New Agent</h2>
     <ol className="list-decimal list-inside text-gray-800 space-y-2 mb-4">
       <li>
-        Navigate to <strong>Agents &gt; <a href={`${process.env.NEXT_PUBLIC_WEBAPP_BE_URL}/agents/add`} target='_blank' className="text-blue-600 hover:underline">Add New Agent</a></strong> from the sidebar.
+        Navigate to <strong>Agents &gt; <a href={webappFeUrl ? `${webappFeUrl}/agents/add` : "/help-docs"} target={webappFeUrl ? "_blank" : undefined} rel={webappFeUrl ? "noopener noreferrer" : undefined} className="text-blue-600 hover:underline">Add New Agent</a></strong> from the sidebar.
       </li>
       <li>
         <strong>Fill Required Details:</strong> Name, Type, Model/LLM, plus optional tags, description, or avatar.
